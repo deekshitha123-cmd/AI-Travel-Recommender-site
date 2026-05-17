@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Travel Recommendation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✈️ AI-Powered Travel Recommendation System</h1>
+            <p>Find your perfect destination with intelligent personalized recommendations</p>
+        </header>
+
+        <main>
+            <form id="travelForm" class="travel-form">
+                <div class="form-section">
+                    <h2>Your Travel Preferences</h2>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">Select your budget</option>
+                            <option value="1">Budget ($500-$1500)</option>
+                            <option value="2">Mid-range ($1500-$3000)</option>
+                            <option value="3">Luxury ($3000+)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weather">Preferred Weather</label>
+                        <select id="weather" name="weather" required>
+                            <option value="">Select preferred weather</option>
+                            <option value="tropical">Tropical/Warm</option>
+                            <option value="temperate">Temperate/Cool</option>
+                            <option value="mediterranean">Mediterranean</option>
+                            <option value="desert">Desert</option>
+                            <option value="cold">Cold</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Activities of Interest (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="adventure">
+                                <span class="checkmark"></span>
+                                Adventure
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="relaxation">
+                                <span class="checkmark"></span>
+                                Relaxation
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="culture">
+                                <span class="checkmark"></span>
+                                Culture
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="nature">
+                                <span class="checkmark"></span>
+                                Nature
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="nightlife">
+                                <span class="checkmark"></span>
+                                Nightlife
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Travel Duration</label>
+                        <select id="duration" name="duration" required>
+                            <option value="">Select travel duration</option>
+                            <option value="1">Weekend getaway (2-4 days)</option>
+                            <option value="2">Short trip (5-7 days)</option>
+                            <option value="3">Extended vacation (8-14 days)</option>
+                            <option value="4">Long adventure (15+ days)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="season">Preferred Season</label>
+                        <select id="season" name="season" required>
+                            <option value="">Select preferred season</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="autumn">Autumn/Fall</option>
+                            <option value="winter">Winter</option>
+                        </select>
+                    </div>
+
+                    <!-- AI Personality Assessment Section -->
+                    <div class="form-group ai-section">
+                        <h3>AI Personality Assessment</h3>
+                        <p>Answer these questions to help our AI understand your travel personality:</p>
+                        
+                        <div class="question">
+                            <p>1. Do you prefer adrenaline-pumping activities or relaxing on a beach?</p>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="personality1" value="adventurous">
+                                    <span class="radio-checkmark"></span>
+                                    Adrenaline-pumping activities
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="personality1" value="relaxed">
+                                    <span class="radio-checkmark"></span>
+                                    Relaxing on a beach
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <p>2. Are you more interested in historical sites or modern city experiences?</p>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="personality2" value="cultural">
+                                    <span class="radio-checkmark"></span>
+                                    Historical sites
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="personality2" value="social">
+                                    <span class="radio-checkmark"></span>
+                                    Modern city experiences
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <p>3. Would you rather stay in luxury hotels or local accommodations?</p>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="personality3" value="luxury">
+                                    <span class="radio-checkmark"></span>
+                                    Luxury hotels
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="personality3" value="budget_conscious">
+                                    <span class="radio-checkmark"></span>
+                                    Local accommodations
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Get AI-Powered Recommendations</button>
+                </div>
+            </form>
+
+            <div id="recommendations" class="recommendations-section">
+                <h2>Your AI-Personalized Recommendations</h2>
+                <div id="recommendationsContainer" class="recommendations-container">
+                    <!-- Recommendations will be displayed here -->
+                </div>
+                <!-- AI Features Section -->
+                <div id="aiFeatures" class="ai-features-section">
+                    <h3>Additional AI Features</h3>
+                    <div class="ai-features-container">
+                        <div class="ai-feature-card">
+                            <h4>🤖 Smart Packing Suggestions</h4>
+                            <div id="packingSuggestions" class="feature-content">
+                                <!-- Packing suggestions will be displayed here -->
+                            </div>
+                        </div>
+                        
+                        <div class="ai-feature-card">
+                            <h4>💡 AI Travel Tips</h4>
+                            <div id="travelTips" class="feature-content">
+                                <!-- Travel tips will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© AI-Powered Travel Recommendation System</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

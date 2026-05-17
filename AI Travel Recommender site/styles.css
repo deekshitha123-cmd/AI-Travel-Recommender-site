@@ -1,0 +1,426 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E4F3D8, #EDDD53);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0; /* Straight edges as per user preference */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: #E4F3D8; /* Light green background as per user preference */
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Main Content */
+main {
+    padding: 30px;
+}
+
+/* Form Styles */
+.travel-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 0; /* Straight edges as per user preference */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 0; /* Straight edges as per user preference */
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    user-select: none;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 2px solid #ddd;
+    border-radius: 0; /* Straight edges as per user preference */
+    transition: all 0.3s ease;
+}
+
+.checkbox-label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-label .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Radio Button Styles */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    user-select: none;
+}
+
+.radio-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.radio-checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.radio-label:hover input ~ .radio-checkmark {
+    background-color: #ccc;
+}
+
+.radio-label input:checked ~ .radio-checkmark {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-label input:checked ~ .radio-checkmark:after {
+    display: block;
+}
+
+.radio-label .radio-checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 0; /* Straight edges as per user preference */
+}
+
+.question p {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ai-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.ai-section p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    background: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 0; /* Straight edges as per user preference */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Recommendations Section */
+.recommendations-section {
+    display: none;
+}
+
+.recommendations-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.recommendations-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.destination-card {
+    background: #fff;
+    border-radius: 0; /* Straight edges as per user preference */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destination-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.destination-card p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.match-info {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 0; /* Straight edges as per user preference */
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+}
+
+.cost-range, .best-time {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.attractions-list {
+    margin-top: 15px;
+}
+
+.attractions-list h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.attractions-list ul {
+    padding-left: 20px;
+}
+
+.attractions-list li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* AI Features Section */
+.ai-features-section {
+    margin-top: 40px;
+}
+
+.ai-features-section h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.ai-features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.ai-feature-card {
+    background: #fff;
+    border-radius: 0; /* Straight edges as per user preference */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border: 1px solid #eee;
+}
+
+.ai-feature-card h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.feature-content {
+    color: #555;
+}
+
+.feature-content ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.feature-content li {
+    margin-bottom: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0; /* Straight edges as per user preference */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 20px 15px;
+    }
+    
+    .travel-form, .destination-card {
+        padding: 20px;
+    }
+    
+    .checkbox-group, .radio-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendations-container, .ai-features-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .question {
+        padding: 10px;
+    }
+}
