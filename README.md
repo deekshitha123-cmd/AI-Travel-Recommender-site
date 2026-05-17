@@ -17,7 +17,7 @@ An AI-powered travel recommendation website that helps users discover the best t
 - CSS
 - JavaScript
 - Python
-- Flask / Django (if used)
+- Flask / Django 
 - AI Recommendation Logic
 
 ## 📂 Project Structure
